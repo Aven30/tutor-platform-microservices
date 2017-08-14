@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import util.HibernateUtil;
 
-import org.fma.entities.Profile;
+import org.fma.entities.BasicInfo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -42,7 +42,7 @@ public class MyServlet extends HttpServlet {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 	    
-	    Profile profile = (Profile) session.createQuery("Select p FROM Profile p").getSingleResult();
+	    BasicInfo profile = (BasicInfo) session.createQuery("Select p FROM Profile p").getSingleResult();
 	
 	    System.out.println(profile.getFirstName()+ " USED");
 	}

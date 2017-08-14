@@ -11,8 +11,8 @@ import org.hibernate.annotations.DynamicUpdate;
 
 @DynamicUpdate
 @Entity
-@Table(name="Profile")
-public class Profile {
+@Table(name="BasicInfo")
+public class BasicInfo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	public int id;
