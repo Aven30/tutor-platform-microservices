@@ -1,4 +1,4 @@
-package models;
+package org.fma.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,6 +16,10 @@ public class Profile {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	public int id;
+	
+	@Column(name="user_id")
+	public int userId;
+	
 	@Column
 	public String firstName;
 	@Column
@@ -32,5 +36,11 @@ public class Profile {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserid(int userId) {
+		this.userId = userId;
 	}
 }

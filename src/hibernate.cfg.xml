@@ -8,6 +8,6 @@
   <property name="hibernate.connection.url">jdbc:mysql://localhost:3317/test?serverTimezone=UTC</property>
   <property name="hibernate.connection.username">root</property>
   <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-  <mapping class="models.Profile"/>
+  <mapping class="org.fma.entities.Profile"/>
  </session-factory>
 </hibernate-configuration>
