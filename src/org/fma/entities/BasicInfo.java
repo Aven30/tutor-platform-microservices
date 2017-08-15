@@ -1,5 +1,7 @@
 package org.fma.entities;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,11 +21,16 @@ public class BasicInfo {
 	
 	@Column(name="user_id")
 	public int userId;
-	
-	@Column
+
+	@Column(name="first_name")
 	public String firstName;
-	@Column
+	
+	@Column(name="last_name")
 	public String lastName;
+	
+	@Column(name="deleted_at")
+	public Date deletedAt;
+	
 	
 	public String getFirstName() {
 		return firstName;
@@ -42,5 +49,11 @@ public class BasicInfo {
 	}
 	public void setUserid(int userId) {
 		this.userId = userId;
+	}
+	public Date getDeletedAt() {
+		return deletedAt;
+	}
+	public void setDeletedAt(Date deletedAt) {
+		this.deletedAt = deletedAt;
 	}
 }
