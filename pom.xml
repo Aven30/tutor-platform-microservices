@@ -60,19 +60,21 @@
     <artifactId>javax.ejb-api</artifactId>
     <version>3.2</version>
 </dependency> 
-<!--
+
 <dependency>
     <groupId>org.jboss.resteasy</groupId>
     <artifactId>resteasy-jaxrs</artifactId>
     <version>3.1.4.Final</version>
+    <scope>provided</scope>
 </dependency>
 
 <dependency>
       <groupId>org.jboss.resteasy</groupId>
       <artifactId>resteasy-jackson-provider</artifactId>
       <version>3.1.4.Final</version>
+      <scope>provided</scope>
 </dependency>
--->
+
 <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>

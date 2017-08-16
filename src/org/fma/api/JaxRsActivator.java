@@ -4,9 +4,9 @@ import javax.ws.rs.core.Application;
 //import io.swagger.jaxrs.config.BeanConfig;
 
 @ApplicationPath("/rest")
-public class RestApplication extends Application {
+public class JaxRsActivator extends Application {
 	
-	public RestApplication() {System.out.println("here in /rest");
+	public JaxRsActivator() {System.out.println("here in /rest");
 //		BeanConfig beanConfig = new BeanConfig();
 //        beanConfig.setVersion("1.0.2");
 //        beanConfig.setSchemes(new String[]{"http"});
