@@ -1,4 +1,4 @@
-
+package org.fma.servlets;
 
 
 import java.io.File;
@@ -43,7 +43,7 @@ public class MyServlet extends HttpServlet {
 		
 		Session session = HibernateUtil.getSessionFactory().openSession();
 	    
-	    BasicInfo profile = (BasicInfo) session.createQuery("Select p FROM BasicInfo p WHERE userId=0").uniqueResult();
+	    BasicInfo profile = (BasicInfo) session.createQuery("Select p FROM Profile p").uniqueResult();
 	
 	    System.out.println(profile.getFirstName()+ " USED");
 	}

@@ -11,5 +11,6 @@
   <property name="hibernate.hbm2ddl.auto">update</property>
   <mapping class="org.fma.entities.BasicInfo"/>
   <mapping class="org.fma.entities.Subjects"/>
+  <mapping class="org.fma.entities.Availability"/>
  </session-factory>
 </hibernate-configuration>

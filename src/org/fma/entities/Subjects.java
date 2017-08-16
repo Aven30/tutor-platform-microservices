@@ -11,8 +11,6 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicUpdate;
 
-import io.swagger.annotations.Api;
-
 @DynamicUpdate
 @Entity
 @Table(name="Subjects")

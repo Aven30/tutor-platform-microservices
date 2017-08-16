@@ -16,11 +16,11 @@ import org.fma.entities.BasicInfo;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
-import io.swagger.annotations.Api;
+//import io.swagger.annotations.Api;
 import util.HibernateUtil;
 
 @Path("basicinfo")
-@Api(value="/subjects", consumes="application/json")
+//@Api(value="/subjects", consumes="application/json")
 public class BasicInfoEndpoint {
 
 	@GET
@@ -32,7 +32,7 @@ public class BasicInfoEndpoint {
 		try {
 			BasicInfo basicInfo = (BasicInfo) session.createQuery("Select b FROM BasicInfo b WHERE b.userId = :userId and b.deletedAt is NULL")
 	    		.setParameter("userId", userId)
-	    		.getSingleResult();
+	    		.uniqueResult();
 			return Response.ok(basicInfo).build();
 		}
 		catch(NoResultException nre)

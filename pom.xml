@@ -31,77 +31,75 @@
       <version>3.1.0</version>
       <scope>provided</scope>
   </dependency>
-  
-<dependency>
- 
-	            <groupId>com.sun.faces</groupId>
- 
-	            <artifactId>jsf-api</artifactId>
- 
-	            <version>2.1.13</version>
- 
-	        </dependency>
- 
-	        <dependency>
- 
-	            <groupId>com.sun.faces</groupId>
- 
-	            <artifactId>jsf-impl</artifactId>
- 
-	            <version>2.1.13</version>
- 
-	        </dependency>
-	        <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-servlet -->
-<dependency>
-    <groupId>org.glassfish.jersey.containers</groupId>
-    <artifactId>jersey-container-servlet</artifactId>
-    <version>2.25.1</version>
-</dependency>
-<!-- if you are using Jersey client specific features without the server side -->
-<dependency>
-    <groupId>org.glassfish.jersey.core</groupId>
-    <artifactId>jersey-client</artifactId>
-    <version>2.25.1</version>
-</dependency>
-	        
-	        <dependency>
+  	        <dependency>
     <groupId>javax.ws.rs</groupId>
     <artifactId>javax.ws.rs-api</artifactId>
     <version>2.0.1</version>
 </dependency>
 	        
-  <dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>jstl</artifactId>
-    <version>1.2</version>
-</dependency>
 
 <dependency>
     <groupId>javax.validation</groupId>
     <artifactId>validation-api</artifactId>
 <version>2.0.0.Final</version>
 </dependency>
-<dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>5.2.10.Final</version>
-</dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>6.0.6</version>
         </dependency>
-<dependency>
-    <groupId>org.glassfish.jersey.media</groupId>
-    <artifactId>jersey-media-json-jackson</artifactId>
-    <version>2.25.1</version>
-</dependency>
+<!--
 <dependency>
     <groupId>io.swagger</groupId>
     <artifactId>swagger-jersey2-jaxrs</artifactId>
     <version>1.5.16</version>
 </dependency>
+-->
+<dependency>
+    <groupId>javax.ejb</groupId>
+    <artifactId>javax.ejb-api</artifactId>
+    <version>3.2</version>
+</dependency> 
+<!--
+<dependency>
+    <groupId>org.jboss.resteasy</groupId>
+    <artifactId>resteasy-jaxrs</artifactId>
+    <version>3.1.4.Final</version>
+</dependency>
 
+<dependency>
+      <groupId>org.jboss.resteasy</groupId>
+      <artifactId>resteasy-jackson-provider</artifactId>
+      <version>3.1.4.Final</version>
+</dependency>
+-->
+<dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.1.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
 
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.2.4.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- for JPA, use hibernate-entitymanager instead of hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>5.1.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>5.1.0.Final</version>
+            <scope>provided</scope>
+        </dependency>
  </dependencies>
 </project>

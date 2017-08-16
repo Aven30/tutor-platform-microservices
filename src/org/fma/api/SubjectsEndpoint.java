@@ -16,23 +16,23 @@ import org.fma.entities.Subjects;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 
-import io.swagger.annotations.Api;
+//import io.swagger.annotations.Api;
 import util.HibernateUtil;
 
-@Api(value="/subjects", consumes="application/json")
+//@Api(value="/subjects", consumes="application/json")
 @Path("subjects")
 public class SubjectsEndpoint {
 
 	@GET
 	@Path("/user/{userId}")
 	@Produces("application/json")
-	public Response Get(@PathParam("userId") int userId) {
+	public Response Get(@PathParam("userId") int userId) {System.out.println("HERE!!!");
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		
 		try {
 			Subjects subjects = (Subjects) session.createQuery("Select b FROM Subjects b WHERE b.userId = :userId and b.deletedAt is NULL")
 	    		.setParameter("userId", userId)
-	    		.getSingleResult();
+	    		.uniqueResult();
 			return Response.ok(subjects).build();
 		}
 		catch(NoResultException nre)
