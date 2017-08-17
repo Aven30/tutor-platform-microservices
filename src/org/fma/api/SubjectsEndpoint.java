@@ -1,8 +1,13 @@
 package org.fma.api;
  
 import java.util.Date;
+import java.util.List;
 
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -12,6 +17,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
+import org.fma.entities.BasicInfo;
 import org.fma.entities.Subjects;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -20,20 +26,26 @@ import org.hibernate.Session;
 import util.HibernateUtil;
 
 //@Api(value="/subjects", consumes="application/json")
+@Stateless
 @Path("subjects")
 public class SubjectsEndpoint {
+
+	@PersistenceContext(unitName="dbPU")
+	public EntityManager em;
 
 	@GET
 	@Path("/user/{userId}")
 	@Produces("application/json")
-	public Response Get(@PathParam("userId") int userId) {System.out.println("HERE!!!");
-		Session session = HibernateUtil.getSessionFactory().openSession();
-		
+	public Response Get(@PathParam("userId") int userId) {
 		try {
-			Subjects subjects = (Subjects) session.createQuery("Select b FROM Subjects b WHERE b.userId = :userId and b.deletedAt is NULL")
-	    		.setParameter("userId", userId)
-	    		.uniqueResult();
-			return Response.ok(subjects).build();
+//			Query query = em.createQuery("SELECT s from BasicInfo s WHERE s.userId = :userId and s.deletedAt is NULL");
+			Query query = em.createQuery("FROM BasicInfo");
+			
+//			query.setParameter("userId", userId);
+			System.out.println("HERE");
+			List<BasicInfo> availability =  query.getResultList();
+			
+			return Response.ok(availability).build();
 		}
 		catch(NoResultException nre)
 		{

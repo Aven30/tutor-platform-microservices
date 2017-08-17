@@ -27,6 +27,9 @@ public class Subjects {
 	@Column(name="deleted_at")
 	public Date deletedAt;
 	
+	@Column(name="user_id")
+	public int userId;
+	
 	public int getId() {
 		return id;
 	}
@@ -50,5 +53,11 @@ public class Subjects {
 	}
 	public void setDeletedAt(Date deletedAt) {
 		this.deletedAt = deletedAt;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public int getUserId() {
+		return userId;
 	}
 }
