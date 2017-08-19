@@ -40,7 +40,6 @@ public class SubjectsEndpoint {
 		try {
 //			Query query = em.createQuery("SELECT s from BasicInfo s WHERE s.userId = :userId and s.deletedAt is NULL");
 			Query query = em.createQuery("FROM BasicInfo");
-			
 //			query.setParameter("userId", userId);
 			System.out.println("HERE");
 			List<BasicInfo> availability =  query.getResultList();

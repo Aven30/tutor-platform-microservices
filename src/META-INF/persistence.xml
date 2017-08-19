@@ -5,14 +5,12 @@
  http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
   <persistence-unit name="dbPU" transaction-type="JTA">
   
- <!-- <jta-data-source>java:jboss/datasources/tutorMySql</jta-data-source>-->
-  	<class>org.fma.entities.Subjects</class>
-    <class>org.fma.entities.BasicInfo</class>
-    <class>org.fma.entities.Availability</class>
+  <jta-data-source>java:/tutorMySqlDS</jta-data-source>
+ 
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/test"/>
-      <property name="javax.persistence.jdbc.user" value="root"/>
-      <property name="javax.persistence.jdbc.password" value="root"/>
+		<property name="hibernate.show_sql" value="true"/>
+        <property name="hibernate.format_sql" value="true"/>
+		<property name="hibernate.dialect" value="org.hibernate.dialect.DerbyTenSevenDialect"/>
     </properties>
   </persistence-unit>
  
